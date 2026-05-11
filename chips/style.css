@@ -1,0 +1,523 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+:root {
+  --bg-main: #f9f3ec; /* main page background */
+  --bg-panel: #fffdf8; /* top card / white surfaces */
+  --bg-soft: #f1e7d8; /* soft beige background areas */
+
+  --text-primary: #111111; /* headings, logo, dark text */
+  --text-secondary: #5a5a5a; /* paragraph text */
+  --text-muted: #9a958d; /* lighter helper text */
+
+  --green-primary: #2a6f3b; /* active nav, brand green */
+  --green-banner: #0f6b3b; /* bottom green banner */
+  --green-deep: #0a5630; /* darker banner shading */
+  --green-light: #b9d46e; /* chip bag highlight green */
+  --green-soft: #dde9b3; /* glow circles / soft green background */
+
+  --yellow-primary: #f6b31a; /* crispy label, accents */
+  --yellow-soft: #ffd65a; /* warm highlight rays */
+
+  --red-primary: #e12431; /* tasty label, red buttons */
+  --orange-primary: #f58a1f; /* dots, search accent, warm highlights */
+
+  --black-primary: #0e0e0e; /* chip bag black, CTA black */
+  --black-soft: #202020; /* secondary dark areas */
+
+  --border-light: #e6ded2; /* input borders, card borders */
+  --shadow-soft: rgba(0, 0, 0, 0.08); /* soft shadows */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Condensed", sans-serif;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-size: 62.5%;
+  background-color: var(--bg-main);
+}
+.container {
+  width: 100%;
+  height: 100vh;
+  max-width: 1200px;
+  margin-inline: auto;
+}
+nav {
+  width: 100%;
+  padding-top: 0.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+nav .logo {
+  width: 16rem;
+}
+.nav-items {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+.nav-items a {
+  text-decoration: none;
+  color: rgb(75, 74, 74);
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: -0.4px;
+  position: relative;
+  display: block;
+  padding-bottom: 1rem;
+  transition: all 0.2s ease;
+}
+.nav-items a:hover {
+  color: var(--text-primary);
+}
+.nav-items a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: var(--green-primary);
+  width: 0%;
+  height: 2px;
+  border-radius: 0.5rem;
+  transition: width 0.3s ease;
+}
+.nav-items a:hover::after {
+  width: 100%;
+}
+.search-bar {
+  border: 1.6px solid #797979;
+  background-color: transparent;
+  border-radius: 3rem;
+  padding: 1rem 1.6rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.search-bar i:nth-child(1) {
+  font-size: 2rem;
+  color: #ffb15c;
+  margin-right: 0.8rem;
+}
+.search-bar input {
+  border: none;
+  outline: none;
+  align-items: stretch;
+  background-color: transparent;
+  margin-right: 0.4rem;
+  font-size: 1.3rem;
+  flex: 1;
+  text-overflow: ellipsis;
+}
+.search-bar i:nth-child(3) {
+  font-size: 2rem;
+  padding: 0rem 0.5rem 0rem 1.5rem;
+  border-left: 2px dotted #737373;
+}
+.search-bar .badge {
+  position: absolute;
+  top: -12%;
+  right: 0;
+  background-color: #e12431;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 40%;
+}
+.search-bar .badge span {
+  font-size: 1rem;
+  color: white;
+  font-weight: 500;
+}
+main {
+  width: 100%;
+  display: flex;
+  gap: 4rem;
+  margin-top: 2rem;
+}
+.left {
+  flex-basis: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: start;
+  gap: 1.8rem;
+}
+.left .green-badge {
+  border: 1.2px solid #0a5630;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.4rem 1rem;
+  color: #0a5630;
+  border-radius: 2.5rem;
+  background-color: var(--green-soft);
+}
+.green-badge i {
+  font-size: 1.5rem;
+  color: inherit;
+}
+.green-badge span {
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+.left h1 {
+  font-size: 4vw;
+  text-transform: uppercase;
+  font-family: "Roboto Condensed", sans-serif;
+  line-height: 5.4rem;
+  letter-spacing: -1px;
+  word-spacing: 0.2px;
+}
+.left h1 span {
+  font-size: 4vw;
+  text-transform: uppercase;
+  font-family: inherit;
+  color: #2a6f3b;
+}
+.left p {
+  font-size: 1.4rem;
+  line-height: 2rem;
+  color: #737373;
+  max-width: 70%;
+}
+.cta-buttons {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+.cta-buttons .add-to-cart {
+  background-color: black;
+  border-radius: 3rem;
+  padding: 0.8rem;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  cursor: pointer;
+}
+.add-to-cart .icon-container {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffd65a;
+}
+.icon-container i {
+  font-size: 2rem;
+}
+.add-to-cart span {
+  font-size: 1.6rem;
+  font-family: "Roboto Condensed", sans-serif;
+  padding: 0rem 1.6rem;
+  color: whitesmoke;
+  text-transform: uppercase;
+}
+.quantity {
+  border: 1.2px solid #ccc;
+  border-radius: 3rem;
+  padding: 1.3rem 0rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  background-color: whitesmoke;
+  display: flex;
+  align-items: center;
+}
+.quantity i {
+  padding: 0rem 1.5rem;
+  font-size: 1.5rem;
+}
+.quantity i:not(:last-child) {
+  border-right: 1.2px solid #ccc;
+}
+.quantity .number {
+  color: #e12431;
+}
+.quantity .add {
+  color: #0a5630;
+}
+.features {
+  display: flex;
+  align-items: center;
+  gap: 2.2rem;
+  justify-content: center;
+  margin-top: 2rem;
+  font-family: "Roboto Condensed", sans-serif;
+  flex-wrap: wrap;
+}
+.features .feature {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: inherit;
+}
+.feature .icon-container {
+  width: 3.5rem;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.icon-container i {
+  font-size: 2.2rem;
+}
+.feature .leaf {
+  border: 1.2px solid #2a6f3b;
+}
+.feature .fire {
+  border: 1.2px solid #c5ab05;
+}
+.feature .fire i {
+  background: linear-gradient(to top, #ff4d4f 0%, #ff7a00 50%, #fadb14 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 5px rgba(255, 122, 0, 0.5));
+}
+.feature .leaf i {
+  color: #2b9546;
+}
+.feature .heart {
+  border: 1.2px solid red;
+}
+.feature .heart i {
+  background: linear-gradient(45deg, #ff0080, #ff5580, #ff7a00);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.feature .content {
+  width: max-content;
+}
+.features .feature .content h3 {
+  font-size: 1.35rem;
+  text-transform: uppercase;
+}
+.feature .content span {
+  font-size: 1rem;
+  text-overflow: ellipsis;
+  font-weight: 500;
+  color: #727272;
+}
+.right {
+  flex-basis: 60%;
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+}
+.right .img-container {
+  width: 70%;
+  position: relative;
+}
+.img-container img {
+  width: 100%;
+  position: absolute;
+  top: -5rem;
+  left: -6rem;
+  object-fit: contain;
+  z-index: 10;
+}
+.options {
+  padding-top: 3rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4rem;
+}
+.options .option {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.option img {
+  width: 5rem;
+}
+.option h3 {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+.option p {
+  font-size: 1.1rem;
+  color: rgb(95, 95, 95);
+  line-height: 1.4rem;
+  letter-spacing: 0.1px;
+}
+.banner {
+  margin: 4rem 0rem 0rem;
+  background: linear-gradient(135deg, #0c6b3a 0%, #0a5a31 50%, #0d7a42 100%);
+  border-radius: 20px;
+  padding: 1.5rem 3rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  gap:12rem;
+}
+.banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at 20% 50%,
+      rgba(255, 255, 255, 0.12),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 80% 40%,
+      rgba(255, 255, 255, 0.08),
+      transparent 25%
+    );
+  pointer-events: none;
+}
+.banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.03) 0px,
+
+    rgba(255, 255, 255, 0.03) 2px,
+
+    transparent 2px,
+
+    transparent 70px
+  );
+}.banner .content{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap:1rem;
+}
+.banner .content h2{
+  font-size: 2rem;
+  text-transform: uppercase;
+  line-height: 2.2rem;
+  color: whitesmoke;
+  position:relative;
+  padding-bottom:0.5rem;
+}
+.banner .content h2:after{
+  content: "";
+  position: absolute;
+  left:0;
+  bottom:0;
+  width:50%;
+  background-color:#c5ab05;
+  height: 2px;
+}
+.banner .content .buttons{
+  display: flex;
+  align-items: center;
+  gap:3rem;
+}
+.buttons .btn{
+  width:3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.buttons .btn i{
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+ .prev{
+  background-color:#9a958d;
+}
+ .prev i {
+  color:#737373;
+}
+ .next i {
+  color: #2b9546;
+}
+ .next{
+  background-color:white;
+}
+
+.cards{
+  flex:1;
+  display: flex;
+  align-items: flex-start;
+  gap:2rem;
+}
+.cards .card{
+  width:25%;
+  padding:0.5rem 1.2rem;
+  border-radius: 2rem;
+  display:flex;
+ justify-content: space-between;
+ box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  align-items: center;
+  background-color: #fff;
+}
+.card .image-container{
+  width:35%;
+  height:100%;
+  position: relative;
+}
+.card .image-container img{
+  width:100%;
+  height: 10rem;
+  flex-shrink: 0;
+  object-fit: contain;
+  position: abo;
+}
+.card .card-content{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap:0.6rem;
+}
+.card-content h3{
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.card-content .rating{
+  display: flex;
+  align-items: center;
+  gap:1rem;
+}
+.card-content .rating .stars{
+  display: flex;
+  align-items: center;
+}
+.card-content .rating .stars i{
+  font-size:1.6rem;
+  color: #f5df50;
+}
+.card-content .rating span{
+  font-size: 1.2rem;
+}
+.card-content span{
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+.card-content .order-btn{
+  padding: 0.5rem 1.4rem;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  gap:1rem;
+  background-color:#f93f43;
+  color:white;
+}
+.order-btn span{
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+.order-btn i{
+  font-size: 1.6rem;
+}

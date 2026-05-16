@@ -217,12 +217,13 @@ nav .left-nav {
 }
 .card-category {
   display: flex;
-  margin-bottom:6rem;
+  margin-bottom: 6rem;
   align-items: center;
   justify-content: space-between;
   padding-inline: 1rem;
 }
-.card-category .popular , .filter {
+.card-category .popular,
+.filter {
   display: flex;
   align-items: center;
   gap: 0.6rem;
@@ -231,288 +232,350 @@ nav .left-nav {
   border: 1px solid grey;
 }
 
-.popular span , .filter span {
+.popular span,
+.filter span {
   font-size: 1.6rem;
   font-weight: 500;
 }
-.popular i , .filter i {
+.popular i,
+.filter i {
   font-size: 1.6rem;
   margin-top: 0.3rem;
 }
-.carousel-wrapper{
-    display: flex;
-    padding: 1rem;
-    align-items: center;
-    position: relative;
-    max-width: 60%;
-    justify-content: space-between;
-    width: 100%;
+.carousel-wrapper {
+  display: flex;
+  padding: 1rem;
+  align-items: center;
+  position: relative;
+  max-width: 60%;
+  justify-content: space-between;
+  width: 100%;
 }
-.nav-btn{
-    background-color: white;
-    display: inline-block;
-    outline:none;
-    border:none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width:4.5rem;
-    height: 4.5rem;
-    border-radius: 50%;
-    cursor: pointer;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    transition: all 0.3s ease-in;
+.nav-btn {
+  background-color: white;
+  display: inline-block;
+  outline: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  transition: all 0.3s ease-in;
 }
-.nav-btn i{
-    font-size: 2.8rem;
-    font-weight: 500;
+.nav-btn i {
+  font-size: 2.8rem;
+  font-weight: 500;
 }
-.nav-btn:hover{
-    background-color: black;
-    color: white;
+.nav-btn:hover {
+  background-color: black;
+  color: white;
 }
-.carousel-container{
-    display: flex;
-    flex:1;
-    overflow-x: auto;
-    align-items: center;
-    scroll-behavior: smooth;
-    scroll-snap-type: x mandatory;
-    gap:3rem;
-    padding:1.2rem 2.6rem;
-    scrollbar-width: none;
+.carousel-container {
+  display: flex;
+  flex: 1;
+  overflow-x: auto;
+  align-items: center;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  gap: 3rem;
+  padding: 1.2rem 2.6rem;
+  scrollbar-width: none;
 }
-.carousel-container::-webkit-scrollbar{
-    display: none;
+.carousel-container::-webkit-scrollbar {
+  display: none;
 }
-.carousel-container span{
-    font-size:1.6rem;
-    padding:0.75rem 1.4rem;
-    border:1px solid #878585;
-    border-radius: 2rem;
-    transition: all 0.4s ease-in;
-    cursor:pointer;
-    white-space: nowrap;
+.carousel-container span {
+  font-size: 1.6rem;
+  padding: 0.75rem 1.4rem;
+  border: 1px solid #878585;
+  border-radius: 2rem;
+  transition: all 0.4s ease-in;
+  cursor: pointer;
+  white-space: nowrap;
 }
-.carousel-container span:hover{
-    background-color: black;
-    color: white;
+.carousel-container span:hover {
+  background-color: black;
+  color: white;
 }
-.cards-container{
-    margin:4rem auto;
-    width:100%;
-    max-width: 1200px;
-    display: flex;
-    flex-wrap: wrap;
-    column-gap: 2%;
-    row-gap:4.5rem;
+.cards-container {
+  margin: 4rem auto;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 2%;
+  row-gap: 4.5rem;
 }
-.cards-container .card{
-    flex-basis: calc((100% - (3*2%))/4);
-    min-width:20rem;
-    cursor: pointer;
-    user-select: none;
-    min-height: 28rem;
-    border-radius: 1.2rem;
-    overflow: hidden;
+.cards-container .card {
+  flex-basis: calc((100% - (3 * 2%)) / 4);
+  min-width: 20rem;
+  cursor: pointer;
+  user-select: none;
+  min-height: 28rem;
+  border-radius: 1.2rem;
+  overflow: hidden;
 }
-.card .img-container{
-    width: 100%;
-    height: 88%;
-    border-radius:1.2rem;
-    overflow: hidden;
+.card .img-container {
+  width: 100%;
+  height: 88%;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  position: relative;
 }
-.card .img-container img,video{
-    width: 100%;
-    height: 100%;
-    user-select: none;
-    object-fit: cover;
-    object-position: center;
-    display: inline-block;
+.card .img-container:hover .effect {
+ opacity: 1;
+ transform: translateY(-100%);
 }
-.card .card-content{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    padding:0.6rem 0.2rem;
+
+.card .img-container img,
+video {
+  width: 100%;
+  height: 100%;
+  user-select: none;
+  object-fit: cover;
+  object-position: center;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
 }
-.card-content .left{
-    display: flex;
-    align-items: center;
-    gap:0.6rem;
+.card .img-container .effect {
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  display: flex;
+  bottom: -35%;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 35%;
+  background: linear-gradient(
+    to top,
+    black,
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.1)
+  );
+  transition: all 0.5s ease-in-out;
+  gap: 0.6rem;
 }
-.card-content .left img{
-    width:3.2rem;
-    height: 3.2rem;
-    border-radius: 50%;
-    object-fit: cover;
+.card .img-container .effect span {
+  color: white;
+  font-size: 1.6rem;
+  font-weight: 600;
+  max-width: 18ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
-.card-content .left .text{
-    font-size: 1.25rem;
-    font-weight: 600;
-    display: inline-block;
-    max-width: 15ch;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+.card .img-container .effect .like,
+.bookmark {
+  width: 3.4rem;
+  height: 3.4rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: whitesmoke;
 }
-.card-content .left .pro{
-    display: inline-block;
-    padding:0.2rem 0.3rem;
-    border-radius: 0.2rem;
-    text-transform: uppercase;
-    color: white;
-    background-color: rgb(180, 179, 179);
-    font-weight: 600;
-    font-size: 1rem;
+.card .img-container .effect .like i,
+.bookmark i {
+  font-size: 1.6rem;
+  font-weight: 500;
 }
-.card-content .right{
-    display: flex;
-    align-items: center;
-    gap:1rem;
+
+.card .card-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.6rem 0.2rem;
 }
-.card-content .right .likes, .views{
-    display: flex;
-    align-items: center;
-    gap:0.4rem;
+.card-content .left {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
 }
-.right .likes span , .views span{
-    font-size: 1.4rem;
+.card-content .left img {
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 50%;
+  object-fit: cover;
 }
-.right .likes i , .views i{
-    font-size: 1.6rem;
-    color: grey;
+.card-content .left .text {
+  font-size: 1.25rem;
+  font-weight: 600;
+  display: inline-block;
+  max-width: 15ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
-.cta{
-    width:100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding:2.5rem 2rem;
-    position: relative;
+.card-content .left .pro {
+  display: inline-block;
+  padding: 0.2rem 0.3rem;
+  border-radius: 0.2rem;
+  text-transform: uppercase;
+  color: white;
+  background-color: rgb(180, 179, 179);
+  font-weight: 600;
+  font-size: 1rem;
 }
-.cta button{
-    border:none;
-    outline: none;
-    color: white;
-    border-radius: 1.8rem;
-    cursor: pointer;
-    padding:1.4rem 1.8rem;
-    font-size: 1.6rem;
-    font-weight: 500;
-    background-color: black;
+.card-content .right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
-.cta .go-top{
-    position: absolute;
-    width:5rem;
-    height: 5rem;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: grey;
-    top:-10%;
-    cursor: pointer;
-    right:4rem;
-    transition: all 0.2s ease-in;
+.card-content .right .likes,
+.views {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
 }
-.go-top:hover{
-    background-color: black;
+.right .likes span,
+.views span {
+  font-size: 1.4rem;
 }
-.go-top i{
-    font-size: 2.4rem;
-    color:white;
-    font-weight: 500;
+.right .likes i,
+.views i {
+  font-size: 1.6rem;
+  color: grey;
 }
-.logo-slider{
-  width:100%;
-  padding:6rem 0rem;
+.cta {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2.5rem 2rem;
+  position: relative;
+}
+.cta button {
+  border: none;
+  outline: none;
+  color: white;
+  border-radius: 1.8rem;
+  cursor: pointer;
+  padding: 1.4rem 1.8rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  background-color: black;
+}
+.cta .go-top {
+  position: absolute;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: grey;
+  top: -10%;
+  cursor: pointer;
+  right: 4rem;
+  transition: all 0.2s ease-in;
+}
+.go-top:hover {
+  background-color: black;
+}
+.go-top i {
+  font-size: 2.4rem;
+  color: white;
+  font-weight: 500;
+}
+.logo-slider {
+  width: 100%;
+  padding: 6rem 0rem;
   position: relative;
   overflow: hidden;
   white-space: nowrap;
 }
-.logo-track{
+.logo-track {
   display: flex;
   width: max-content;
   align-items: center;
   animation: logoSlider 30s linear infinite;
 }
-.logo-track:hover{
+.logo-track:hover {
   animation-play-state: paused;
 }
-.logo-track .logo{
+.logo-track .logo {
   display: flex;
   padding: 0rem 6rem;
   align-items: center;
   justify-content: center;
 }
-.logo-track .logo img{
-  height:4rem;
+.logo-track .logo img {
+  height: 4rem;
   width: auto;
   user-select: none;
   pointer-events: none;
 }
 
 @keyframes logoSlider {
-  0%{
+  0% {
     transform: translateX(0);
-  }100%{
+  }
+  100% {
     transform: translateX(-50%);
   }
 }
 
-footer{
-  width:100%;
-  margin:2rem 0rem 6rem;
+footer {
+  width: 100%;
+  margin: 2rem 0rem 6rem;
 }
-.about{
- padding:1rem 1.4rem;
- display: flex;
- align-items: center;
- justify-content: space-between;
-}
-.about .left img {
-  width:8.5vw;
-}
-.about .center{
+.about {
+  padding: 1rem 1.4rem;
   display: flex;
   align-items: center;
-  gap:2rem;
+  justify-content: space-between;
 }
-.about .center a{
-  color:black;
+.about .left img {
+  width: 8.5vw;
+}
+.about .center {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.about .center a {
+  color: black;
   font-size: 1.6rem;
   font-weight: 600;
 }
-.about .social-links{
+.about .social-links {
   display: flex;
   align-items: center;
-  gap:1.6rem;
+  gap: 1.6rem;
   cursor: pointer;
 }
-.social-links a{
+.social-links a {
   font-size: 2.6rem;
-  color:#242323;
+  color: #242323;
 }
-.policy{
-  display:flex;
-  align-items:center;
-  justify-content: space-between;
-  padding:4rem 6rem;
-  cursor: pointer;
-}
-.policy .left,.right{
+.policy {
   display: flex;
   align-items: center;
-  gap:1.6rem;
+  justify-content: space-between;
+  padding: 4rem 6rem;
+  cursor: pointer;
 }
-.policy .left a, .right a{
+.policy .left,
+.right {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+.policy .left a,
+.right a {
   font-size: 1.45rem;
   color: grey;
   transition: all 0.3s ease-in;
   font-weight: 600;
 }
-.policy .left a:hover , .right a:hover{
-  color:black;
+.policy .left a:hover,
+.right a:hover {
+  color: black;
 }

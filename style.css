@@ -29,7 +29,7 @@ body {
 main {
   width: 100%;
   min-height: 100vh;
-  max-width: 1300px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0rem 1rem;
 }
@@ -85,6 +85,11 @@ nav .left-nav {
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+}
+.right-nav i{
+  font-size: 2.6rem;
+  cursor: pointer;
+  display: none;
 }
 .right-nav .login {
   background-color: black;
@@ -309,6 +314,7 @@ nav .left-nav {
   flex-wrap: wrap;
   column-gap: 2%;
   row-gap: 4.5rem;
+  justify-content: center;
 }
 .cards-container .card {
   flex-basis: calc((100% - (3 * 2%)) / 4);
